@@ -1,5 +1,6 @@
 import os
 import boto3
+import requests
 from PIL import Image
 import pandas as pd
 import numpy as np

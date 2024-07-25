@@ -21,7 +21,7 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: 'tb_dataset.pkl', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'tb_dataset.csv', onlyIfSuccessful: true
         }
             }
         

@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Extract Data"){
+            steps{
+                sh 'python3 extract_data.py'
+            }
+        }
+        stage("Visualize Data"){
+            steps{
+                sh 'python3 datavisualization.py'
+            }
+        }
+    }
+    post{
+       
+        always {
+            archiveArtifacts artifacts: 'tb_dataset.pkl', onlyIfSuccessful: true
+        }
+            }
+        
+}

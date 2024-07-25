@@ -28,7 +28,7 @@ def visualize_data():
     fig_1 = px.bar(label_counts, x='X-Ray Type', y='Number of Cases', title='Distribution of X-Ray Cases')
     fig_1.update_xaxes(showgrid=False)
     fig_1.update_yaxes(showgrid=False)
-    # fig_1.show()
+    fig_1.show()
     fig_1.write_image('fig_1.jpg')
 
     # Get a few samples for both classes
@@ -54,6 +54,8 @@ def visualize_data():
     fig_2.update_layout(height=600, width=1000, title_text="Sample X-Ray Images")
     fig_2.show()
     fig_2.write_image('fig_2.jpg')
+
+    data.to_csv('tb_dataset.csv', index=False)
 
     return data
 

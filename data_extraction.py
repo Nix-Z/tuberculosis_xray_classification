@@ -1,6 +1,8 @@
 import os
 import boto3
 import requests
+from io import BytesIO
+import zipfile
 from PIL import Image
 import pandas as pd
 import numpy as np

@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Extract Data"){
             steps{
-                sh 'python3 data_extraction.py'
+                sh 'python3 extract_data.py'
             }
         }
         stage("Visualize Data"){
@@ -17,11 +17,17 @@ pipeline{
                 sh 'python3 datavisualization.py'
             }
         }
+        stage("Transform Data"){
+            steps{
+                sh 'python3 data_transformation.py'
+            }
+        }
+      
     }
     post{
        
         always {
-            archiveArtifacts artifacts: 'tb_dataset.csv', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'model_dataset.pkl', onlyIfSuccessful: true
         }
             }
         

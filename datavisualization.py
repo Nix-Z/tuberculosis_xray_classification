@@ -7,7 +7,7 @@ import random
 import os
 from data_extraction import load_data
 
-def visualize_data:
+def visualize_data():
     try:
         url = load_data()
         url_response = requests.get(url)
